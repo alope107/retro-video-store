@@ -39,8 +39,7 @@ Install dependencies (we've already gathered them all into a `requirements.txt` 
 Create a database:
 
 1. A development database named `video_store_api_development`
-1. [OPTIONAL] A test database named `video_store_api_test`
-    - There are no Pytest tests for this project.  If you choose to write your own using the tests from Task List as a model, we recommend you also use a testing database
+1. A test database named `video_store_api_test`
 
 ## Creating a `.env` File
 
@@ -54,8 +53,8 @@ Create two environment variables that will hold your database URLs.
 Your `.env` may look like this:
 
 ```
-SQLALCHEMY_DATABASE_URI=postgresql+psycopg2://postgres:postgres@localhost:5432/task_list_api_development
-SQLALCHEMY_TEST_DATABASE_URI=postgresql+psycopg2://postgres:postgres@localhost:5432/task_list_api_test
+SQLALCHEMY_DATABASE_URI=postgresql+psycopg2://postgres:postgres@localhost:5432/video_store_api_development
+SQLALCHEMY_TEST_DATABASE_URI=postgresql+psycopg2://postgres:postgres@localhost:5432/video_store_api_test
 ```
 
 ## Run `$ flask db init`

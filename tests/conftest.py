@@ -4,6 +4,7 @@ from app.models.video import Video
 from app.models.customer import Customer
 from app import db
 from datetime import datetime
+from flask.signals import request_finished
 
 VIDEO_TITLE = "A Brand New Video"
 VIDEO_INVENTORY = 1
@@ -15,14 +16,16 @@ CUSTOMER_PHONE = "123-123-1234"
 
 @pytest.fixture
 def app():
-    # create the app with a test config dictionary
     app = create_app({"TESTING": True})
+
+    @request_finished.connect_via(app)
+    def expire_session(sender, response, **extra):
+        db.session.remove()
 
     with app.app_context():
         db.create_all()
         yield app
 
-    # close and remove the temporary database
     with app.app_context():
         db.drop_all()
 
