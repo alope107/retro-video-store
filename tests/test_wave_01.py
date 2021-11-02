@@ -151,7 +151,6 @@ def test_update_video(client, one_video):
         "release_date": "01-01-2021"
     })
     response_body = response.get_json()
-    print("********", response_body)
 
     # Assert
     assert response.status_code == 200
@@ -248,15 +247,14 @@ def test_create_customer(client):
 
     # Assert
     assert response.status_code == 201
-    assert response_body["name"] == CUSTOMER_NAME
     assert response_body["id"] == CUSTOMER_ID
-    assert response_body["phone"] == CUSTOMER_PHONE
-    assert response_body["postal_code"] == CUSTOMER_POSTAL_CODE
 
     new_customer = Customer.query.get(1)
 
     assert new_customer
     assert new_customer.name == CUSTOMER_NAME
+    assert new_customer.postal_code = CUSTOMER_POSTAL_CODE
+    assert new_customer.phone = CUSTOMER_PHONE
 
 def test_create_customer_must_contain_postal(client):
     # Act
@@ -328,7 +326,6 @@ def test_update_customer(client, one_customer):
         "postal_code": f"Updated ${CUSTOMER_POSTAL_CODE}"
     })
     response_body = response.get_json()
-    print("********", response_body)
 
     # Assert
     assert response.status_code == 200
@@ -338,6 +335,9 @@ def test_update_customer(client, one_customer):
 
     customer = Customer.query.get(1)
     assert customer.name == f"Updated ${CUSTOMER_NAME}"
+    assert customer.phone == f"Updated ${CUSTOMER_PHONE}"
+    assert customer.postal_code == f"Updated ${CUSTOMER_POSTAL_CODE}"
+    
 
 def test_update_customer_not_found(client):
     # Act

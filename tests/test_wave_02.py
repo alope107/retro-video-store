@@ -126,7 +126,7 @@ def test_checkin_video_not_checked_out(client, one_video, one_customer):
     response_body = response.get_json()
 
     assert response.status_code == 400
-    assert response_body == {"message": "No outstanding rentals for customer # 1 and video 1"}
+    assert response_body == {"message": "No outstanding rentals for customer 1 and video 1"}
     
 
 def test_rentals_by_video(client, one_checked_out_video):

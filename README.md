@@ -31,6 +31,8 @@ The full functionality is spelled out further in the "Project Directions" files 
 
 Go through the waves one-by-one and build the features of this API.
 
+Use the Requirements in the Project Directions and the unit tests to guide your development.
+
 At submission time, no matter where you are, submit the project via Learn.
 
 ## Project Directions
