@@ -119,6 +119,7 @@ def handle_one_video(video_id):
             customer = Customer.query.get(rental.customer_id)
             customer.videos_checked_out_count -= 1
             db.session.delete(rental)
+            db.session.commit()
 
         db.session.delete(video)
         db.session.commit()
@@ -219,12 +220,12 @@ def check_in():
 
     rentals = Rental.query.filter_by(customer_id=customer_id).filter_by(video_id=video_id).all()
     if rentals == []:
-        return {"message": f"No outstanding rentals for customer # {customer_id} and video {video_id}"}, 400
+        return {"message": f"No outstanding rentals for customer {customer_id} and video {video_id}"}, 400
     
     # If there are multiple copies of the same movie checked out to the same customer, choose one arbitrarily
-    rental = rentals[0]
-
-    db.session.delete(rental)
+    #rental = rentals[0]
+    for rental in rentals:
+        db.session.delete(rental)
 
     customer.videos_checked_out_count -= 1
     video.available_inventory += 1
