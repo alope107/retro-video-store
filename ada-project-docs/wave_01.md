@@ -87,16 +87,14 @@ Status: `200`
     "name": "Shelley Rocha",
     "registered_at": "Wed, 29 Apr 2015 07:54:14 -0700",
     "postal_code": 24309,
-    "phone": "(322) 510-8695",
-    "videos_checked_out_count": 0
+    "phone": "(322) 510-8695"
   },
   {
     "id": 2,
     "name": "Curran Stout",
     "registered_at": "Wed, 16 Apr 2014 21:40:20 -0700",
     "postal_code": 94267,
-    "phone": "(908) 949-6758",
-    "videos_checked_out_count": 0
+    "phone": "(908) 949-6758"
   }
 ]
 ```
@@ -126,8 +124,7 @@ Status: `200`
     "name": "Curran Stout",
     "registered_at": "Wed, 16 Apr 2014 21:40:20 -0700",
     "postal_code": 94267,
-    "phone": "(908) 949-6758",
-    "videos_checked_out_count": 0
+    "phone": "(908) 949-6758"
 }
 ```
 
@@ -192,8 +189,7 @@ Status: `200`
     "name": "Curran Stout",
     "registered_at": "Wed, 16 Apr 2014 21:40:20 -0700",
     "postal_code": 94267,
-    "phone": "(908) 949-6758",
-    "videos_checked_out_count": 0
+    "phone": "(908) 949-6758"
 }
 ```
 
@@ -257,15 +253,13 @@ Status: `200`
     "id": 1,
     "title": "Blacksmith Of The Banished",
     "release_date": "1979-01-18",
-    "total_inventory": 10,
-    "available_inventory": 9
+    "total_inventory": 10
   },
   {
     "id": 2,
     "title": "Savior Of The Curse",
     "release_date": "2010-11-05",
-    "total_inventory": 11,
-    "available_inventory": 1
+    "total_inventory": 11
   }
 ]
 ```
@@ -294,8 +288,7 @@ Status: `200`
   "id": 1,
   "title": "Blacksmith Of The Banished",
   "release_date": "1979-01-18",
-  "total_inventory": 10,
-  "available_inventory": 9
+  "total_inventory": 10
 }
 ```
 
@@ -359,8 +352,7 @@ Status: `200`
   "id": 1,
   "title": "Blacksmith Of The Banished",
   "release_date": "1979-01-18",
-  "total_inventory": 10,
-  "available_inventory": 9
+  "total_inventory": 10
 }
 ```
 
