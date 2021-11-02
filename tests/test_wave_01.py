@@ -58,6 +58,15 @@ def test_get_video_not_found(client):
     assert response.status_code == 404
     assert response_body == {"message": "Video 1 was not found"}
 
+def test_get_invalid_video_id(client, one_video):
+    # Act
+    response = client.get("/videos/hello")
+    response_body = response.get_json()
+
+    # Assert
+    assert response.status_code == 400
+
+
 # CREATE
 def test_create_video(client):
     # Act
@@ -233,6 +242,13 @@ def test_get_customer_not_found(client):
     # Assert
     assert response.status_code == 404
     assert response_body == {"message": "Customer 1 was not found"}
+
+def test_get_invalid_customer_id(client, one_customer):
+    # Act
+    response = client.get("/customers/hello")
+
+    # Assert
+    assert response.status_code == 400
 
 # CREATE
 def test_create_customer(client):

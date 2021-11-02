@@ -2,19 +2,14 @@
 
 ## `Rental` Model
 
-These custom endpoints are best served with a `Rental` model.  You will need to determine the columns for the `Rental` table and establish the following relationships between the tables using SQLAlchemy.
-
-![ERD Diagram](/assets/retro-video-store.svg)
-
-*Fig. ERD Diagram of the finished database.*
+These custom endpoints are best served with a `Rental` model.  You will need to determine the columns for the exact `Rental` table. It should include foreign keys for the `customer` and `video`. We recommend drawing an ERD.
 
 ## `POST /rentals/check-out`
 
 [Checks out](https://www.merriam-webster.com/dictionary/checkout) a video to a customer, and updates the data in the database as such.
 
 When successful, this request should:
-- increase the customer's `videos_checked_out_count` by one
-- decrease the video's `available_inventory` by one
+- create a rental for the specific video and customer.
 - create a due date. The rental's due date is the seven days from the current date.
 
 #### Required Request Body Parameters
@@ -40,6 +35,8 @@ Status: `200`
 }
 ```
 
+*Hint: We recommended calculating the available inventory dynamically. The video's available inventory is equal to the video's total inventory minus the number of rentals associated with that video.*
+
 #### Errors & Edge Cases to Check
 
 - The API should return back detailed errors and a status `404: Not Found` if the customer does not exist
@@ -50,8 +47,7 @@ Status: `200`
 [Checks in](https://www.merriam-webster.com/dictionary/check-in) a video to a customer, and updates the data in the database as such.
 
 When successful, this request should:
-- decrease the customer's `videos_checked_out_count` by one
-- increase the video's `available_inventory` by one
+- either delete the rental or change it's status to `"checked_in"`. You can choose the exact implementation.
 
 #### Required Request Body Parameters
 
@@ -74,6 +70,8 @@ Status: `200`
   "available_inventory": 6
 }
 ```
+
+*Hint: We recommend calculating the videos checked out count dynamically. The customer's videos checked out count is the number of rentals associated with that customer.*
 
 #### Errors and Edge Cases to Check
 

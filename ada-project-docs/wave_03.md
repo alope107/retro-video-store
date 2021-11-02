@@ -70,4 +70,9 @@ Fields to return:
 
 ## Deployment
 
-Consider deploying your API to Heroku following the instructions from Learn and Task List.  Set up your CLI to use the deployed version of your API rather than your localhost version.
+Consider deploying your API to Heroku following the instructions from Learn and Task List.  
+
+
+## CLI
+
+Create a Command Line Interface (CLI) program as a client for the Retro Video Store API.

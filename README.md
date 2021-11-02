@@ -5,7 +5,9 @@
 - Following directions and reading comprehension
 - Demonstrating understanding of the client-server model, request-response cycle and conventional RESTful routes
 - Driving development with independent research, experimentation, and collaboration
+- Considering different implementations to meet project requirements
 - Using Postman as part of the development workflow
+- Using unit tests as part of the development workflow
 - Using git as part of the development workflow
 
 - Working with the Flask package:
@@ -38,7 +40,6 @@ At submission time, no matter where you are, submit the project via Learn.
 ## Project Directions
 
 1. [Setup](ada-project-docs/setup.md)
-1. [Hints and suggestions](ada-project-docs/hints.md)
 1. [Wave 1: CRUD for two models](ada-project-docs/wave_01.md)
 1. [Wave 2: Custom endpoints](ada-project-docs/wave_02.md)
 1. [Wave 3: Optional extensions](ada-project-docs/wave_03.md)
