@@ -253,8 +253,8 @@ def test_create_customer(client):
 
     assert new_customer
     assert new_customer.name == CUSTOMER_NAME
-    assert new_customer.postal_code = CUSTOMER_POSTAL_CODE
-    assert new_customer.phone = CUSTOMER_PHONE
+    assert new_customer.postal_code == CUSTOMER_POSTAL_CODE
+    assert new_customer.phone == CUSTOMER_PHONE
 
 def test_create_customer_must_contain_postal(client):
     # Act
